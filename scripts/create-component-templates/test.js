@@ -1,9 +1,9 @@
 import React from "react"
-import renderer from 'react-test-renderer';
+import renderer from "react-test-renderer"
 import COMPONENT from ".."
 
 const createProps = () => ({
-  classes: {}
+  classes: {},
 })
 
 describe("<COMPONENT />", () => {

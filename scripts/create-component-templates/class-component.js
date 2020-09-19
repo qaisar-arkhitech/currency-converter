@@ -1,5 +1,5 @@
 import React from "react"
-import { View, Text } from "react-native"
+import {View, Text} from "react-native"
 import PropTypes from "prop-types"
 import flow from "lodash/flow"
 import styles from "./styles"
@@ -9,20 +9,24 @@ class COMPONENT extends React.Component {
   constructor(props) {
     super(props)
     this.state = {
-      show: false
+      show: false,
     }
   }
 
   componentDidMount() {
     this.setState({
-      show: true
+      show: true,
     })
   }
 
   render() {
-    const { show } = this.state
+    const {show} = this.state
 
-    return <View><Text>COMPONENT</Text></View>
+    return (
+      <View>
+        <Text>COMPONENT</Text>
+      </View>
+    )
   }
 }
 
