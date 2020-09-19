@@ -18,19 +18,33 @@ import {reducerName as firstLoadReducerName} from "./reducers/firstLoad/actions"
 import userReducer from "./reducers/user"
 import {reducerName as userReducerName} from "./reducers/user/actions"
 
+import themesReducer from "./reducers/themes"
+import {reducerName as themesReducerName} from "./reducers/themes/actions"
+
 export const saveAuthFilter = createFilter(authReducerName, [
   "login.data",
   "redirectUrl",
 ])
+
 export const loadAuthFilter = createFilter(authReducerName, null, [
   "login.data",
+])
+
+export const saveThemesFilter = createFilter(themesReducerName, ["default"])
+export const loadThemesFilter = createFilter(themesReducerName, null, [
+  "default",
 ])
 
 const storageConfig = {
   key: "root",
   storage: AsyncStorage,
-  whitelist: [authReducerName, firstLoadReducerName],
-  transforms: [saveAuthFilter, loadAuthFilter],
+  whitelist: [authReducerName, firstLoadReducerName, themesReducerName],
+  transforms: [
+    saveAuthFilter,
+    loadAuthFilter,
+    saveThemesFilter,
+    loadThemesFilter,
+  ],
 }
 
 const configureStore = (initialState = {}) => {
@@ -38,6 +52,7 @@ const configureStore = (initialState = {}) => {
   reducerRegistery.register(authReducerName, authReducer)
   reducerRegistery.register(firstLoadReducerName, firstLoadReducer)
   reducerRegistery.register(userReducerName, userReducer)
+  reducerRegistery.register(themesReducerName, themesReducer)
 
   const reducers = persistCombineReducers(
     storageConfig,
