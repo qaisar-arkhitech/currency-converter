@@ -7,7 +7,9 @@
     "ios": "react-native run-ios",
     "start": "react-native start",
     "test": "jest",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "create-func-component": "sh scripts/create-func-component.sh",
+    "create-class-component": "sh scripts/create-class-component.sh"
   },
   "dependencies": {
     "@react-native-community/masked-view": "^0.1.10",
@@ -30,6 +32,12 @@
     "react-test-renderer": "16.13.1"
   },
   "jest": {
-    "preset": "react-native"
+    "preset": "react-native",
+    "setupFiles": [
+      "<rootDir>/jest/setup.js"
+    ],
+    "modulePathIgnorePatterns": [
+      "<rootDir>/scripts/"
+    ]
   }
 }
