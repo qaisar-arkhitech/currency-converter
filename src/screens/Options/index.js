@@ -1,19 +1,38 @@
 import React from "react"
-import {View, Text} from "react-native"
+import {SafeAreaView, StatusBar, ScrollView} from "react-native"
 import PropTypes from "prop-types"
-import styles from "./styles"
+import Entypo from "react-native-vector-icons/Entypo"
+import flow from "lodash/flow"
+import themeStyles from "./styles"
+import connect from "./connect"
+import {RowItem} from "../../components/RowItem"
 
 // Options Component content
-export const Options = () => (
-  <View>
-    <Text>Options</Text>
-  </View>
-)
+export const Options = ({navigation, styleableTheme}) => {
+  const styles = themeStyles(styleableTheme)
+  return (
+    <SafeAreaView style={styles.root}>
+      <StatusBar barStyle="dark-content" />
+      <ScrollView>
+        <RowItem
+          title="Themes"
+          onPress={() => navigation.push("Themes")}
+          rightIcon={<Entypo name="chevron-right" size={20} />}
+        />
+      </ScrollView>
+    </SafeAreaView>
+  )
+}
 
 // Options Proptypes
-Options.propTypes = {}
+Options.propTypes = {
+  navigation: PropTypes.object.isRequired,
+  styleableTheme: PropTypes.object,
+}
 
 // Options Default props
-Options.defaultProps = {}
+Options.defaultProps = {
+  styleableTheme: {},
+}
 
-export default Options
+export default flow([connect])(Options)
