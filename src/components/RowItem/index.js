@@ -1,15 +1,20 @@
-import React from "react"
+import React, {useContext} from "react"
 import {Text, TouchableOpacity, View} from "react-native"
 import PropTypes from "prop-types"
-import styles from "./styles"
+import themeStyles from "./styles"
+import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // RowItem Component content
-export const RowItem = ({title, onPress, rightIcon}) => (
-  <TouchableOpacity onPress={onPress} style={styles.row}>
-    <Text style={styles.title}>{title}</Text>
-    {rightIcon}
-  </TouchableOpacity>
-)
+export const RowItem = ({title, onPress, rightIcon}) => {
+  const {styleableTheme} = useContext(ThemeContext)
+  const styles = themeStyles(styleableTheme)
+  return (
+    <TouchableOpacity onPress={onPress} style={styles.row}>
+      <Text style={styles.title}>{title}</Text>
+      {rightIcon}
+    </TouchableOpacity>
+  )
+}
 
 // RowItem Proptypes
 RowItem.propTypes = {
@@ -24,9 +29,11 @@ RowItem.defaultProps = {
   rightIcon: null,
 }
 
-export const RowSeparator = ({style}) => (
-  <View style={[styles.separator, style]} />
-)
+export const RowSeparator = ({style}) => {
+  const {styleableTheme} = useContext(ThemeContext)
+  const styles = themeStyles(styleableTheme)
+  return <View style={[styles.separator, style]} />
+}
 
 // RowSeparator Proptypes
 RowSeparator.propTypes = {
