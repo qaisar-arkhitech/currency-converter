@@ -20,7 +20,7 @@ export const Home = ({navigation, styleableTheme}) => {
   const styles = themeStyles(styleableTheme)
   return (
     <View style={styles.root}>
-      <StatusBar barStyle="default" />
+      <StatusBar barStyle="default" backgroundColor={styleableTheme[500]} />
       <ScrollView scrollEnabled={scrollEnabled}>
         <SafeAreaView style={styles.header}>
           <TouchableOpacity onPress={() => navigation.push("Options")}>
