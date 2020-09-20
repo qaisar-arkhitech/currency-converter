@@ -12,7 +12,7 @@ export const Options = ({navigation, styleableTheme}) => {
   const styles = themeStyles(styleableTheme)
   return (
     <SafeAreaView style={styles.root}>
-      <StatusBar barStyle="dark-content" />
+      <StatusBar barStyle="default" backgroundColor={styleableTheme[500]} />
       <ScrollView>
         <RowItem
           title="Themes"

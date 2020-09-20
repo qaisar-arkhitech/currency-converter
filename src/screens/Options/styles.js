@@ -5,7 +5,7 @@ const styles = (styleableTheme) => {
   return StyleSheet.create({
     root: {
       flex: 1,
-      backgroundColor: styleableTheme.pri50,
+      backgroundColor: styleableTheme[50],
     },
   })
 }
