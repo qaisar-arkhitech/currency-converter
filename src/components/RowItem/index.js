@@ -1,5 +1,5 @@
 import React from "react"
-import {Text, TouchableOpacity} from "react-native"
+import {Text, TouchableOpacity, View} from "react-native"
 import PropTypes from "prop-types"
 import styles from "./styles"
 
@@ -24,4 +24,14 @@ RowItem.defaultProps = {
   rightIcon: null,
 }
 
-export default RowItem
+export const RowSeparator = ({style}) => (
+  <View style={[styles.separator, style]} />
+)
+
+// RowSeparator Proptypes
+RowSeparator.propTypes = {
+  style: PropTypes.object.isRequired,
+}
+
+// RowSeparator Default props
+RowSeparator.defaultProps = {}

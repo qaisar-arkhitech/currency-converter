@@ -29,6 +29,23 @@ exports[`<RowItem /> Does not explode 1`] = `
         "fontSize": 16,
       }
     }
-  />
+  >
+    test
+  </Text>
 </View>
+`;
+
+exports[`<RowSeparator /> Does not explode 1`] = `
+<View
+  style={
+    Array [
+      Object {
+        "height": 0.5,
+      },
+      Object {
+        "backgroundColor": "#fff",
+      },
+    ]
+  }
+/>
 `;
