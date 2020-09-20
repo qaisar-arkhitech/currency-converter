@@ -1,13 +1,15 @@
-import "react-native-gesture-handler"
-import React from "react"
+import React, {useEffect} from "react"
+import flow from "lodash/flow"
+
 import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 
-import Home from "./src/screens/Home"
-import Options from "./src/screens/Options"
-import Themes from "./src/screens/Themes"
+import Home from "../screens/Home"
+import Options from "../screens/Options"
+import Themes from "../screens/Themes"
+import connect from "./connect"
 
-function OptionsStack() {
+const OptionsStack = () => {
   const Stack = createStackNavigator()
   return (
     <Stack.Navigator screenOptions={{headerShown: true}}>
@@ -17,7 +19,13 @@ function OptionsStack() {
   )
 }
 
-export default function App() {
+const App = ({defaultTheme, changeTheme}) => {
+  useEffect(() => {
+    if (defaultTheme) {
+      changeTheme(defaultTheme)
+    }
+  }, [defaultTheme])
+
   const Stack = createStackNavigator()
   return (
     <NavigationContainer>
@@ -36,3 +44,5 @@ export default function App() {
     </NavigationContainer>
   )
 }
+
+export default flow([connect])(App)
