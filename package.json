@@ -6,7 +6,7 @@
     "android": "react-native run-android",
     "ios": "react-native run-ios --simulator='iPhone 8'",
     "start": "react-native start",
-    "test": "jest -- --watch",
+    "test": "jest",
     "lint": "eslint .",
     "create-func-component": "sh scripts/create-func-component.sh",
     "create-class-component": "sh scripts/create-class-component.sh",

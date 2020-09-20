@@ -1,15 +1,17 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import Themes from ".."
 
-const createProps = () => ({
-  classes: {},
-})
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<Themes />", () => {
+  const createProps = () => ({})
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<Themes {...props} />).toJSON()
+    const component = render(<Themes {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 })

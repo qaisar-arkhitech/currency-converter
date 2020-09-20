@@ -1,15 +1,20 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import Options from ".."
 
-const createProps = () => ({
-  classes: {},
-})
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<Options />", () => {
+  const createProps = () => ({
+    navigation: {}
+  })
+
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<Options {...props} />).toJSON()
+    const component = render(<Options {...props} />).toJSON()
     expect(component).toMatchSnapshot()
   })
 })
