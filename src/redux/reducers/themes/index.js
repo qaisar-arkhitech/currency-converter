@@ -4,7 +4,7 @@ import constants from "../../../constants"
 
 const {themeOptions} = constants
 
-const initialState = {
+export const initialState = {
   themes: {
     ...themeOptions,
   },

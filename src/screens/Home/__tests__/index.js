@@ -1,15 +1,19 @@
 import React from "react"
-import renderer from "react-test-renderer"
+import {render, cleanup, store} from '../../../../jest/testUtils';
 import Home from ".."
 
-const createProps = () => ({
-  classes: {},
-})
+afterEach(() => {
+  cleanup();
+  store.clearActions();
+});
 
 describe("<Home />", () => {
+  const createProps = () => ({
+    navigation: {}
+  })
   it("Does not explode", () => {
     const props = createProps()
-    const component = renderer.create(<Home {...props} />).toJSON()
-    expect(component).toMatchSnapshot()
+    const rendered = render(<Home {...props} />).toJSON();
+    expect(rendered).toMatchSnapshot();
   })
 })

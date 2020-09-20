@@ -4,14 +4,92 @@ exports[`<Home /> Does not explode 1`] = `
 <View
   style={
     Object {
-      "alignItems": "center",
+      "backgroundColor": "#e6f7ee",
       "flex": 1,
-      "justifyContent": "center",
     }
   }
 >
-  <Text>
-    Home
-  </Text>
+  <RCTScrollView
+    scrollEnabled={false}
+  >
+    <View>
+      <RNCSafeAreaView
+        style={
+          Object {
+            "alignItems": "flex-end",
+            "marginHorizontal": 20,
+          }
+        }
+      >
+        <View
+          accessible={true}
+          focusable={true}
+          onClick={[Function]}
+          onResponderGrant={[Function]}
+          onResponderMove={[Function]}
+          onResponderRelease={[Function]}
+          onResponderTerminate={[Function]}
+          onResponderTerminationRequest={[Function]}
+          onStartShouldSetResponder={[Function]}
+          style={
+            Object {
+              "opacity": 1,
+            }
+          }
+        >
+          <Text
+            allowFontScaling={false}
+            style={
+              Array [
+                Object {
+                  "color": "#fff",
+                  "fontSize": 32,
+                },
+                undefined,
+                Object {
+                  "fontFamily": "Entypo",
+                  "fontStyle": "normal",
+                  "fontWeight": "normal",
+                },
+                Object {},
+              ]
+            }
+          >
+            
+          </Text>
+        </View>
+      </RNCSafeAreaView>
+      <View>
+        <TextInput
+          allowFontScaling={true}
+          rejectResponderTermination={true}
+          style={
+            Object {
+              "backgroundColor": "#000",
+              "fontSize": 16,
+              "height": 40,
+              "padding": 10,
+            }
+          }
+          underlineColorAndroid="transparent"
+        />
+      </View>
+      <View
+        style={
+          Array [
+            Object {
+              "bottom": 0,
+              "left": 0,
+              "right": 0,
+            },
+            Object {
+              "height": 0,
+            },
+            Object {},
+          ]
+        }
+      />
+    </View>
+  </RCTScrollView>
 </View>
 `;
