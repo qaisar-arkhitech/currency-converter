@@ -9,6 +9,6 @@ export const selectStyleableTheme = createSelector(
   selectThemes,
   selectDefaultTheme,
   (themes, defaultColor) => {
-    return themes[defaultColor || "#2fbe74"]
+    return themes[defaultColor]
   }
 )
