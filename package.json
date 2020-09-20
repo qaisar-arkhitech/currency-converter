@@ -9,7 +9,8 @@
     "test": "jest -- --watch",
     "lint": "eslint .",
     "create-func-component": "sh scripts/create-func-component.sh",
-    "create-class-component": "sh scripts/create-class-component.sh"
+    "create-class-component": "sh scripts/create-class-component.sh",
+    "create-reducers": "sh scripts/create-reducers.sh"
   },
   "dependencies": {
     "@react-native-community/async-storage": "^1.12.0",
