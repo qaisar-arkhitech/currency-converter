@@ -21,6 +21,9 @@ import {reducerName as userReducerName} from "./reducers/user/actions"
 import themesReducer from "./reducers/themes"
 import {reducerName as themesReducerName} from "./reducers/themes/actions"
 
+import conversionReducer from "./reducers/conversion"
+import {reducerName as conversionReducerName} from "./reducers/conversion/actions"
+
 export const saveAuthFilter = createFilter(authReducerName, [
   "login.data",
   "redirectUrl",
@@ -53,6 +56,7 @@ const configureStore = (initialState = {}) => {
   reducerRegistery.register(firstLoadReducerName, firstLoadReducer)
   reducerRegistery.register(userReducerName, userReducer)
   reducerRegistery.register(themesReducerName, themesReducer)
+  reducerRegistery.register(conversionReducerName, conversionReducer)
 
   const reducers = persistCombineReducers(
     storageConfig,
