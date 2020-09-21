@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`conversion reducer should return the initial state 1`] = `
+Object {
+  "data": null,
+  "loader": false,
+  "loadingError": null,
+}
+`;
