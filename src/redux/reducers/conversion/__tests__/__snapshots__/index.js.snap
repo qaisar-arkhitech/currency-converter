@@ -1,9 +1,41 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`conversion reducer should handle GET_REQUEST_FAIL 1`] = `
+Object {
+  "rates": Object {
+    "data": null,
+    "loader": false,
+    "loadingError": undefined,
+  },
+}
+`;
+
+exports[`conversion reducer should handle GET_REQUEST_START 1`] = `
+Object {
+  "rates": Object {
+    "data": null,
+    "loader": true,
+    "loadingError": null,
+  },
+}
+`;
+
+exports[`conversion reducer should handle GET_REQUEST_SUCCESS 1`] = `
+Object {
+  "rates": Object {
+    "data": undefined,
+    "loader": false,
+    "loadingError": null,
+  },
+}
+`;
+
 exports[`conversion reducer should return the initial state 1`] = `
 Object {
-  "data": null,
-  "loader": false,
-  "loadingError": null,
+  "rates": Object {
+    "data": null,
+    "loader": false,
+    "loadingError": null,
+  },
 }
 `;

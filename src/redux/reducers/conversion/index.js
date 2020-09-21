@@ -1,6 +1,6 @@
-import {createReducer} from "../../utility"
-import {RATES} from "./actions"
-import {ERROR, LOADED, LOADING} from "../../middleware/actions"
+import { createReducer } from "../../utility"
+import { RATES } from "./actions"
+import { ERROR, LOADED, LOADING } from "../../middleware/actions"
 
 // conversion initial state
 export const initialState = {
@@ -30,7 +30,7 @@ const reducers = {
       ...state,
       rates: {
         ...state.rates,
-        data: payload,
+        data: payload?.result,
         loader: false,
       },
     }
@@ -43,7 +43,7 @@ const reducers = {
         ...state.rates,
         data: null,
         loader: false,
-        loadingError: payload,
+        loadingError: payload?.result,
       },
     }
   },
