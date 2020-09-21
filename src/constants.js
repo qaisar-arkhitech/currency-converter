@@ -1,6 +1,6 @@
 const urls = Object.freeze({
-  prod: "https://gorest.co.in",
-  dev: "https://gorest.co.in",
+  prod: "http://fixer.handlebarlabs.com",
+  dev: "http://fixer.handlebarlabs.com",
 })
 
 const baseUrl = __DEV__ ? urls.dev : urls.prod
@@ -129,6 +129,22 @@ export const constants = Object.freeze({
       A200: "#8c8c8c",
       A400: "#737373",
       A700: "#666666",
+    },
+    "#4f6d7a": {
+      50: "#eaedef",
+      100: "#cad3d7",
+      200: "#a7b6bd",
+      300: "#8499a2",
+      400: "#69838e",
+      500: "#4f6d7a",
+      600: "#486572",
+      700: "#3f5a67",
+      800: "#36505d",
+      900: "#263e4a",
+      A100: "#92d9ff",
+      A200: "#5fc7ff",
+      A400: "#2cb5ff",
+      A700: "#13acff",
     },
   },
 })
