@@ -19,6 +19,11 @@ export const Options = ({navigation, styleableTheme}) => {
           onPress={() => navigation.push("Themes")}
           rightIcon={<Entypo name="chevron-right" size={20} />}
         />
+        <RowItem
+          title="Currency List"
+          onPress={() => navigation.push("CurrencyList")}
+          rightIcon={<Entypo name="chevron-right" size={20} />}
+        />
       </ScrollView>
     </SafeAreaView>
   )

@@ -7,6 +7,8 @@ import {createStackNavigator} from "@react-navigation/stack"
 import Home from "../screens/Home"
 import Options from "../screens/Options"
 import Themes from "../screens/Themes"
+import CurrencyList from "../screens/CurrencyList"
+
 import connect from "./connect"
 
 const OptionsStack = () => {
@@ -15,6 +17,13 @@ const OptionsStack = () => {
     <Stack.Navigator screenOptions={{headerShown: true}}>
       <Stack.Screen name="Options" component={Options} />
       <Stack.Screen name="Themes" component={Themes} />
+      <Stack.Screen
+        name="CurrencyList"
+        component={CurrencyList}
+        options={{
+          title: "Currency List",
+        }}
+      />
     </Stack.Navigator>
   )
 }

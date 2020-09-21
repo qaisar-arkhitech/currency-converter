@@ -1,6 +1,6 @@
 import {StyleSheet} from "react-native"
 
-// Themes: Styling here
+// CurrencyList: Styling here
 const styles = (styleableTheme) => {
   return StyleSheet.create({
     root: {

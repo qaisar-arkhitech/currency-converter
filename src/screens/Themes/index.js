@@ -43,7 +43,7 @@ export const Themes = ({themes, changeTheme, defaultTheme, styleableTheme}) => {
             />
             <RowSeparator
               style={{
-                backgroundColor: Color(styleableTheme[50]).darken(0.04).hex(),
+                backgroundColor: Color(styleableTheme[500]).darken(0.04).hex(),
               }}
             />
           </React.Fragment>
