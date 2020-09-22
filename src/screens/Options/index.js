@@ -15,6 +15,7 @@ export const Options = ({navigation, styleableTheme}) => {
       <StatusBar barStyle="default" backgroundColor={styleableTheme[500]} />
       <ScrollView>
         <RowItem
+          testID="themes"
           title="Themes"
           onPress={() => navigation.push("Themes")}
           rightIcon={<Entypo name="chevron-right" size={20} />}

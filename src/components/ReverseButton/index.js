@@ -6,7 +6,10 @@ import reverse from "../../assets/images/reverse.png"
 
 // ReverseButton Component content
 export const ReverseButton = ({onPress, text}) => (
-  <TouchableOpacity onPress={onPress} style={styles.button}>
+  <TouchableOpacity
+    testID="reverse_button"
+    onPress={onPress}
+    style={styles.button}>
     <Image source={reverse} style={styles.buttonIcon} resizeMode="contain" />
     <Text style={styles.buttonText}>{text}</Text>
   </TouchableOpacity>

@@ -22,10 +22,12 @@ export const Home = ({navigation, styleableTheme, getRates}) => {
   }, [])
 
   return (
-    <View style={styles.root}>
+    <View style={styles.root} testID="welcome">
       <StatusBar barStyle="default" backgroundColor={styleableTheme[500]} />
       <SafeAreaView style={styles.header}>
-        <TouchableOpacity onPress={() => navigation.push("Options")}>
+        <TouchableOpacity
+          testID="options_screen_button"
+          onPress={() => navigation.push("Options")}>
           <Entypo name="cog" size={32} color="#fff" />
         </TouchableOpacity>
       </SafeAreaView>
@@ -45,8 +47,11 @@ export const Home = ({navigation, styleableTheme, getRates}) => {
           </View>
           <Text style={styles.textHeader}>Currency Converter</Text>
           <View style={styles.inputContainer}>
-            <ConversionInput keyboardType="numeric" />
-            <ConversionInput editable={false} />
+            <ConversionInput
+              keyboardType="numeric"
+              testID="conversion_input_1"
+            />
+            <ConversionInput editable={false} testID="conversion_input_2" />
             <ReverseButton text="Reverse Currencies" onPress={() => {}} />
           </View>
           <KeyboardSpacer onToggle={(visible) => setScrollEnabled(visible)} />

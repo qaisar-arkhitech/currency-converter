@@ -5,14 +5,14 @@ import themeStyles from "./styles"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // ConversionInput Component content
-export const ConversionInput = ({text, onButtonPress, ...reset}) => {
+export const ConversionInput = ({text, onButtonPress, ...rest}) => {
   const {styleableTheme} = useContext(ThemeContext)
 
   const styles = themeStyles(styleableTheme)
 
   const containerStyles = [styles.container]
 
-  if (reset.editable === false) {
+  if (rest.editable === false) {
     containerStyles.push(styles.containerDisabled)
   }
   return (
@@ -20,7 +20,7 @@ export const ConversionInput = ({text, onButtonPress, ...reset}) => {
       <TouchableOpacity style={styles.button} onPress={onButtonPress}>
         <Text style={styles.buttonText}>{text}</Text>
       </TouchableOpacity>
-      <TextInput style={styles.input} {...reset} />
+      <TextInput style={styles.input} {...rest} />
     </View>
   )
 }

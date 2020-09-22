@@ -19,6 +19,7 @@ export const Themes = ({themes, changeTheme, defaultTheme, styleableTheme}) => {
         {colors.map((color, index) => (
           <React.Fragment key={`theme-${index + 1}`}>
             <RowItem
+              testID={`theme-${index + 1}`}
               title={`Theme ${index + 1}`}
               onPress={() => changeTheme(color)}
               rightIcon={

@@ -5,11 +5,11 @@ import themeStyles from "./styles"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 
 // RowItem Component content
-export const RowItem = ({title, onPress, rightIcon}) => {
+export const RowItem = ({title, onPress, rightIcon, ...rest}) => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
   return (
-    <TouchableOpacity onPress={onPress} style={styles.row}>
+    <TouchableOpacity onPress={onPress} style={styles.row} {...rest}>
       <Text style={styles.title}>{title}</Text>
       {rightIcon}
     </TouchableOpacity>
