@@ -1,13 +1,13 @@
 {
-    "common": {
-        "login": "Login",
-        "home": "Home",
-        "options": "Options",
-        "themes": "Themes",
-        "currency_list": "Currency list"
+    "common":{
+        "login":"Login",
+        "home":"Home",
+        "options":"Options",
+        "themes":"Themes",
+        "currency_list":"Currency list" 
     },
-    "login": {
-        "title": "Login",
-        "email": "Email"
+    "login":{
+        "title":"Login",
+        "email":"Email"
     }
 }
