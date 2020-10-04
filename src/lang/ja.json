@@ -1,0 +1,13 @@
+{
+    "common": {
+        "login": "ログイン",
+        "home": "ホーム",
+        "options": "オプション",
+        "themes": "テーマ",
+        "currency_list": "通貨リスト"
+    },
+    "login": {
+        "title": "ログイン",
+        "email": "メールアドレス"
+    }
+}
