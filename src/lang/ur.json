@@ -1,13 +1,13 @@
 {
     "common": {
-        "login": "Login",
-        "home": "Home",
-        "options": "Options",
-        "themes": "Themes",
-        "currency_list": "Currency list"
+        "login": "لاگ اِن",
+        "home": "ہوم",
+        "options": "آپشنز",
+        "themes": "تھیمز",
+        "currency_list": "کرنسی کی فہرست"
     },
     "login": {
-        "title": "Login",
-        "email": "Email"
+        "title": "لاگ ان کریں",
+        "email": "ای میل"
     }
 }
