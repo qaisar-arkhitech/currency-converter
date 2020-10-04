@@ -15,6 +15,7 @@ import Color from "color"
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
 import {Formik} from "formik"
 import * as Yup from "yup"
+import {useTranslation} from "react-i18next"
 import {HeaderBar} from "../../components/HeaderBar"
 import {ThemeContext} from "../../ContextUtils/ThemeContext"
 import {Logo} from "../../components/Logo"
@@ -27,6 +28,7 @@ export const Login = ({login}) => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
   const {name} = useRoute()
+  const {t} = useTranslation()
 
   const [loader, setLoader] = useState(false)
   const [scrollEnabled, setScrollEnabled] = useState(false)
@@ -86,7 +88,7 @@ export const Login = ({login}) => {
               <View style={styles.inputContainer}>
                 <TextInput
                   style={styles.input}
-                  placeholder="Email"
+                  placeholder={t("login.email")}
                   placeholderTextColor={Color(styleableTheme.A700)
                     .darken(0.6)
                     .hex()}

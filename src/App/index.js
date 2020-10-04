@@ -4,6 +4,13 @@ import {NavigationContainer} from "@react-navigation/native"
 import {createStackNavigator} from "@react-navigation/stack"
 import flow from "lodash/flow"
 import PropTypes from "prop-types"
+import {
+  View,
+  StyleSheet,
+  ActivityIndicator,
+  I18nManager as RNI18nManager,
+} from "react-native"
+import {useTranslation} from "react-i18next"
 
 import Login from "../screens/Login"
 import Home from "../screens/Home"
@@ -15,6 +22,7 @@ import connect from "./connect"
 
 const OptionsStack = () => {
   const Stack = createStackNavigator()
+  const {t} = useTranslation()
   return (
     <Stack.Navigator screenOptions={{headerShown: false}}>
       <Stack.Screen name="Options" component={Options} />
@@ -23,7 +31,7 @@ const OptionsStack = () => {
         name="CurrencyList"
         component={CurrencyList}
         options={{
-          title: "Currency List",
+          title: t("common.currency_list"),
         }}
       />
     </Stack.Navigator>
