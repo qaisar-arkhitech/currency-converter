@@ -4,10 +4,34 @@
         "home": "ہوم",
         "options": "آپشنز",
         "themes": "تھیمز",
-        "currency_list": "کرنسی کی فہرست"
+        "currency_list": "کرنسی کی فہرست",
+        "ok": "Ok",
+        "required": "Required",
+        "back": "Back",
+        "languages": "Languages"
     },
     "login": {
         "title": "لاگ ان کریں",
-        "email": "ای میل"
+        "email": "ای میل",
+        "password": "Password",
+        "submit": "Submit",
+        "email_mismatch": "The email address that you've entered doesn't match any account.",
+        "invalid_email": "Invalid email"
+    },
+    "home": {
+        "title": "ہوم",
+        "reverse_currencies": "Reverse currencies",
+        "quote_currency": "Quote currency",
+        "base_currency": "Base currency",
+        "currency_converter": "Currency converter",
+        "converting": "Converting..."
+    },
+    "options": {
+        "title": "آپشنز",
+        "logout": "Logout"
+    },
+    "themes": {
+        "title": "تھیمز",
+        "theme": "Theme"
     }
 }
