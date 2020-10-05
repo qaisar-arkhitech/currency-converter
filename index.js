@@ -10,6 +10,7 @@ import configureStore from "./src/redux/configureStore"
 import App from "./src/App"
 import ThemeContextProvider from "./src/ContextUtils/ThemeContext"
 import ConversionContextProvider from "./src/ContextUtils/ConversionContext"
+import LanguagesContextProvider from "./src/ContextUtils/LanguagesContext"
 import configureI18next from "./src/services/i18n"
 import {name as appName} from "./app.json"
 
@@ -23,11 +24,13 @@ const Main = () => (
   <Provider store={store}>
     <PersistGate loading={<Text>loading...</Text>} persistor={persistor}>
       <I18nextProvider i18n={i18n}>
-        <ThemeContextProvider>
-          <ConversionContextProvider>
-            <App />
-          </ConversionContextProvider>
-        </ThemeContextProvider>
+        <LanguagesContextProvider>
+          <ThemeContextProvider>
+            <ConversionContextProvider>
+              <App />
+            </ConversionContextProvider>
+          </ThemeContextProvider>
+        </LanguagesContextProvider>
       </I18nextProvider>
     </PersistGate>
   </Provider>

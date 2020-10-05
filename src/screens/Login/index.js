@@ -10,7 +10,6 @@ import {
 import flow from "lodash/flow"
 import isEqual from "lodash/isEqual"
 import PropTypes from "prop-types"
-import {useRoute} from "@react-navigation/native"
 import Color from "color"
 import {KeyboardAwareScrollView} from "react-native-keyboard-aware-scroll-view"
 import {Formik} from "formik"
@@ -27,7 +26,6 @@ import {KeyboardSpacer} from "../../components/KeyboardSpacer"
 export const Login = ({login}) => {
   const {styleableTheme} = useContext(ThemeContext)
   const styles = themeStyles(styleableTheme)
-  const {name} = useRoute()
   const {t} = useTranslation()
 
   const [loader, setLoader] = useState(false)
@@ -38,7 +36,7 @@ export const Login = ({login}) => {
 
   return (
     <View style={styles.root} testID="login_screen">
-      <HeaderBar isHeaderShow={false} title={name} />
+      <HeaderBar isHeaderShow={false} title={t("login.title")} />
       <KeyboardAwareScrollView
         scrollEnabled
         behavior="padding"
@@ -49,8 +47,10 @@ export const Login = ({login}) => {
           <Formik
             initialValues={{email: "", password: ""}}
             validationSchema={Yup.object().shape({
-              email: Yup.string().email("Invalid email").required("Required"),
-              password: Yup.string().required("Required"),
+              email: Yup.string()
+                .email(t("login.invalid_email"))
+                .required(t("common.required")),
+              password: Yup.string().required(t("common.required")),
             })}
             onSubmit={(values) => {
               const loginFakeData = {
@@ -64,17 +64,13 @@ export const Login = ({login}) => {
                   setLoader(false)
                 })
               } else {
-                Alert.alert(
-                  "Error",
-                  "The email address that you've entered doesn't match any account.",
-                  [
-                    {
-                      text: "OK",
-                      onPress: () => console.log("OK Pressed"),
-                      testID: "alert",
-                    },
-                  ]
-                )
+                Alert.alert("Error", t("login.email_mismatch"), [
+                  {
+                    text: t("common.ok"),
+                    onPress: () => console.log("OK Pressed"),
+                    testID: "alert",
+                  },
+                ])
               }
             }}>
             {({
@@ -104,7 +100,7 @@ export const Login = ({login}) => {
                 ) : null}
                 <TextInput
                   style={styles.input}
-                  placeholder="Password"
+                  placeholder={t("login.password")}
                   placeholderTextColor={Color(styleableTheme.A700)
                     .darken(0.6)
                     .hex()}
@@ -122,7 +118,9 @@ export const Login = ({login}) => {
                   style={styles.submitButton}
                   onPress={handleSubmit}
                   testID="submit">
-                  <Text style={styles.submitButtonText}>Submit</Text>
+                  <Text style={styles.submitButtonText}>
+                    {t("login.submit")}
+                  </Text>
                 </TouchableOpacity>
                 {loader ? <ActivityIndicator color="#fff" /> : null}
               </View>
