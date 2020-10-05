@@ -5,33 +5,33 @@
         "options": "آپشنز",
         "themes": "تھیمز",
         "currency_list": "کرنسی کی فہرست",
-        "ok": "Ok",
-        "required": "Required",
-        "back": "Back",
-        "languages": "Languages"
+        "ok": "اوکے",
+        "required": "ضروری",
+        "back": "واپس",
+        "languages": "زبانیں"
     },
     "login": {
         "title": "لاگ ان کریں",
         "email": "ای میل",
-        "password": "Password",
-        "submit": "Submit",
-        "email_mismatch": "The email address that you've entered doesn't match any account.",
-        "invalid_email": "Invalid email"
+        "password": "پاس ورڈ",
+        "submit": "بھیجیں",
+        "email_mismatch": "آپ نے جو ای میل پتہ داخل کیا ہے وہ کسی بھی اکاؤنٹ سے مماثل نہیں ہے۔",
+        "invalid_email": "غلط ای میل"
     },
     "home": {
         "title": "ہوم",
-        "reverse_currencies": "Reverse currencies",
-        "quote_currency": "Quote currency",
-        "base_currency": "Base currency",
-        "currency_converter": "Currency converter",
-        "converting": "Converting..."
+        "reverse_currencies": "ریورس کرنسی",
+        "quote_currency": "حوالہ کرنسی",
+        "base_currency": "بنیادی کرنسی",
+        "currency_converter": "کرنسی کنورٹر",
+        "converting": "تبدیل ہو رہا ہے..."
     },
     "options": {
         "title": "آپشنز",
-        "logout": "Logout"
+        "logout": "لاگ آؤٹ"
     },
     "themes": {
         "title": "تھیمز",
-        "theme": "Theme"
+        "theme": "تھیم"
     }
 }
